@@ -10,6 +10,8 @@ const dataSeconds = document.querySelector('[data-seconds]');
 const startButton = document.querySelector('[data-start]');
 let timerInterval = null;
 
+startButton.disabled = true;
+
 inputDate.style.fontSize = '35px';
 startButton.style.fontSize = '35px';
 dataDays.style.display = 'flex';
@@ -25,6 +27,7 @@ function updateTimer() {
   const now = new Date();
   const endDate = new Date(inputDate.value);
   const diffMs = endDate.getTime() - now.getTime();
+  
   if (diffMs <= 0) {
     clearInterval(timerInterval);
     dataDays.textContent = '00';
@@ -53,8 +56,10 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
+
 startButton.addEventListener('click', () => {
   timerInterval = setInterval(updateTimer, 1000);
+  startButton.disabled = true;
 });
 function addLeadingZero(value) {
 
