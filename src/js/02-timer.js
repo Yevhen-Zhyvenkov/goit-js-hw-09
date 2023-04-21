@@ -9,7 +9,6 @@ const dataMinutes = document.querySelector('[data-minutes]');
 const dataSeconds = document.querySelector('[data-seconds]');
 const startButton = document.querySelector('[data-start]');
 let timerInterval = null;
-
 startButton.disabled = true;
 
 inputDate.style.fontSize = '35px';
