@@ -13,7 +13,6 @@ function onClickStart() {
     document.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
 };
-
 buttonStop.addEventListener('click', onClickStop);
 function onClickStop() {
   clearInterval(timerId);
